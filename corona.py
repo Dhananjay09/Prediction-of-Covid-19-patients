@@ -24,21 +24,21 @@ if n==1:
 	x=df[["Serial"]]
 	y=df[["Daily_Confirmed"]]
 	pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
 	print pkjj.predict(no_of_day(inp))
 elif n==2:
 	x=df[["Serial"]]
         y=df[["Total_Confirmed"]]
         x_train,x_test,y_train,y_test=train_test_split(x,y)
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
         print pkjj.predict(no_of_day(inp))
 
 if n==3:
         x=df[["Serial"]]
         y=df[["Daily_Recovered"]]
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
         print pkjj.predict(no_of_day(inp))
 
 elif n==4:
@@ -46,14 +46,14 @@ elif n==4:
         y=df[["Total_Recovered"]]
         x_train,x_test,y_train,y_test=train_test_split(x,y)
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
         print pkjj.predict(no_of_day(inp))
 
 if n==5:
         x=df[["Serial"]]
         y=df[["Daily_Deceased"]]
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
         print pkjj.predict(no_of_day(inp))
 
 elif n==6:
@@ -61,6 +61,5 @@ elif n==6:
         y=df[["Total_Deceased"]]
         x_train,x_test,y_train,y_test=train_test_split(x,y)
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
         print pkjj.predict(no_of_day(inp))
-
