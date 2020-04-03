@@ -5,6 +5,8 @@ def no_of_day(inp,x):
 		month=int(inp[1])-4
 		day=int(inp[0])-1
 		return year*365+month*30+day+x
+	else:
+		print ("Please Enter the Valid Inputes")
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
