@@ -1,15 +1,16 @@
 # Developed by Dhananjay Singh
-def no_of_day(inp):
+def no_of_day(inp,x):
 	if int(inp[2])>=2020 and int(inp[0])>0 and int(inp[0])<=31 and int(inp[1])<=12 and int(inp[1])>=1:
 		year=int(inp[2])-2020
 		month=int(inp[1])-4
 		day=int(inp[0])-1
-		return year*365+month*30+day+28
+		return year*365+month*30+day+x
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 pkjj=open('corona.txt','r').read()
 pkjj=pkjj.split("\n")
+length=(len(pkjj))
 new=[]
 for line in pkjj:
 	al=line.split()
@@ -24,21 +25,21 @@ if n==1:
 	x=df[["Serial"]]
 	y=df[["Daily_Confirmed"]]
 	pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
-	print pkjj.predict(no_of_day(inp))
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+	print pkjj.predict(no_of_day(inp, length))
 elif n==2:
 	x=df[["Serial"]]
         y=df[["Total_Confirmed"]]
         x_train,x_test,y_train,y_test=train_test_split(x,y)
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
-        print pkjj.predict(no_of_day(inp))
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+        print pkjj.predict(no_of_day(inp,length))
 
 if n==3:
         x=df[["Serial"]]
         y=df[["Daily_Recovered"]]
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
         print pkjj.predict(no_of_day(inp))
 
 elif n==4:
@@ -46,20 +47,21 @@ elif n==4:
         y=df[["Total_Recovered"]]
         x_train,x_test,y_train,y_test=train_test_split(x,y)
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
-        print pkjj.predict(no_of_day(inp))
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+        print pkjj.predict(no_of_day(inp,length))
 
 if n==5:
         x=df[["Serial"]]
         y=df[["Daily_Deceased"]]
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
-        print pkjj.predict(no_of_day(inp))
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+        print pkjj.predict(no_of_day(inp,length))
 
 elif n==6:
         x=df[["Serial"]]
         y=df[["Total_Deceased"]]
         x_train,x_test,y_train,y_test=train_test_split(x,y)
         pkjj=LinearRegression().fit(x,y)
-	inp=raw_input("Enter Date in the Format of DD-MM-YYYY\n").split("-")
-        print pkjj.predict(no_of_day(inp))
+	inp=raw_input("Enter Date in the Format of DD-MM-YYYY").split("-")
+        print pkjj.predict(no_of_day(inp,length))
+
